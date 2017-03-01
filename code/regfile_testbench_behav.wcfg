@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="regfile_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="regfile_testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/write" type="logic">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/address_A" type="array">
+      <obj_property name="ElementShortName">address_A[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_A[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/address_B" type="array">
+      <obj_property name="ElementShortName">address_B[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_B[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/address_dest" type="array">
+      <obj_property name="ElementShortName">address_dest[4:0]</obj_property>
+      <obj_property name="ObjectShortName">address_dest[4:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/write_data" type="array">
+      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/A" type="array">
+      <obj_property name="ElementShortName">A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/B" type="array">
+      <obj_property name="ElementShortName">B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/SIZE" type="array">
+      <obj_property name="ElementShortName">SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/bits" type="array">
+      <obj_property name="ElementShortName">bits[31:0]</obj_property>
+      <obj_property name="ObjectShortName">bits[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/regfile_testbench/uut/rf" type="array">
+      <obj_property name="ElementShortName">rf[31:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf[31:0][31:0]</obj_property>
+   </wvobject>
+</wave_config>
