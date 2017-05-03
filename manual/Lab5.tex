@@ -18,43 +18,37 @@
 
 
 \author{Josh Young}
-\title{Lab 5}
+\title{Lab 6}
 
 \begin{document}
 \maketitle
 
 \section{Introduction}
-Lab 5 has the user begin implementation of the next stage for the mips machine, namely, the decoding stage. The lab walks the user through creating and testing 2 parts of the stage. These are the control unit and the sign extender. Once the two items were developed, simulations were ran in order to validate the code and insure there are no errors.
+In Lab 6, the user is tasked with finishing and testing a regfile for the MIPS machine by creating a test bench and running a simulation. The results of the simulation were observed in order to be sure that the regfile is reading and writing properly. Vivado was used to create the test bench as well as run the simulation for the regfile.
 
 \section{Interface}
-The sign extender is quite simple. The input is a 16 bit binary number, and the output is a 32 bit binary number where the most significant bit of the input is concatenated multiple times for the output. The control unit is slightly more complex; this is due to multiple outputs that are dependent on the opcode that the control is fed. The control unit has 8 outputs, which are RegDst, Branch, MemRead, MemtoReg, ALUOp, ALUSrc, and RegWrite. These outputs are either 0 or 1 with the exception of the ALUOp, which is a 2 bit code. 
+The Register file has several inputs, these consist of 2 registers, a write register, write control, data to write, a clock, and a reset. There are only a couple of outputs for the register file though, which is just reading data from the registers.
 
 \section{Design}
-The sign extender and control are an invaluable part of the decoding stage.
+The register file is an invaluable part of the decoding stage for a MIPS machine. The register file is used as a channel between the decode and write back stages. It is necessary though to use a buffer with the register file, however that isn't addressed in lab 6.
 
 \section{Implementation}
-The code used for creating the sign extender can be seen in Listing~\ref{code:sign} on page~\pageref{code:sign}. The code for creating the control can be seen in Listing~\ref{code:control} on page~\pageref{code:control}.
+The code used for creating the regfile can be seen in Listing~\ref{code:regfil} on page~\pageref{code:regfil}.
 
-\Verilog{Verilog code for implementing a sign extender.}{code:sign}{../code/2_decode/sign_extender.v}
-
-\Verilog{Verilog code for implementing the control.}{code:control}{../code/2_decode/control.v}
+\Verilog{Verilog code for implementing a regfile.}{code:regfil}{../code/2_decode/regfile.v}
 
 \section{Test Bench Design}
-The lab had the user create two test benches, one for the control unit, and the other for the sign extender. The goal for the test bench was to try and 'break' the code for the control unit or sign extender. For the sign extender, this was done by feeding the input different binary numbers and observe if the sign of the number was correctly extended for all 32 bits. As for the control, a series of actual opcodes (i.e. for branch, load, store) as well as made up ones where dumped into the input. 
+The lab had the user create a test bench for the regfile. The goal for the test bench was to try and 'break' the code for the regfile. This test was done by setting the addresses for register A and B, and then changing the writing address as well as the data. Then, the outputs were monitored to be sure that the regfile behaved correctly. The verilog code for the regfile test bench can be viewed in Listing~\ref{code:regtest} on page~\pageref{code:regtest}. 
 
-The verilog code for the sign extender test bench can be viewed in Listing~\ref{code:SignTest} on page~\pageref{code:SignTest}, and the code for the control test may be viewed in Listing~\ref{code:Controltest} on page~\pageref{code:Controltest}.
-
-\Verilog{Verilog code for testing the sign extender.}{code:SignTest}{../code/2_decode/sign_ext_test.v}
-
-\Verilog{Verilog code for testing the control.}{code:Controltest}{../code/2_decode/control_test.v}
+\Verilog{Verilog code for testing the regfile.}{code:regtest}{../code/2_decode/regfile.v}
 
 \section{Simulation}
-By viewing the timing diagrams for the control and sign extender, one can see that both behave as expected. The timing diagram for the control can be viewed in Figure~\ref{fig:control_test}. The timing diagram for the sign extender may be viewed in Figure~\ref{fig:sign_extend_test}.
+By viewing the timing diagrams for the register file test, one can see that the register file behaved as expected. The timing diagram for the register file can be viewed in Figure~\ref{fig:test}. 
 
 
 
 \section{Conclusions}
-The goal for Lab 5 was to create and test 2 components of the decoding stage, namely, the sign extender, and the control. The control is used to get information based off of the corresponding opcode that was fed to the input, and the sign extender simply extends the most significant bit of a 16 bit binary number and turns it into a 32 bit number with the same value. The test benches for each of the devices show that they are both in working order.
+The goal for lab 6 was to finish the register file and create a test bench for it. The simulation shows that the register file acted as it should have. The register file should be able to read from registers and write to registers based off of a given control command.
 
 \begin{figure}
 	\begin{center}
